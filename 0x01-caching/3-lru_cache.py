@@ -34,7 +34,6 @@ class LRUCache(BaseCache):
                 print('DISCARD: {}'.format(first_key))
 
         self.queue.append(key)
-        print(self.queue)
         self.cache_data[key] = item
 
     def get(self, key):
