@@ -23,19 +23,6 @@ class LRUCache(BaseCache):
         if key is None or item is None:
             return
 
-        """
-        if (key not in self.keys_index.values() and
-                len(self.cache_data) == super().MAX_ITEMS):
-            lru_key = self.keys_index[self.lru_index]
-            del self.keys_index[self.lru_index]
-            del self.cache_data[lru_key]
-            print('DISCARD: {}'.format(lru_key))
-            while self.lru_index not in self.keys_index.keys():
-                self.lru_index += 1
-        elif key in self.keys_index.values():
-            del_index = [i for i, k in self.keys_index.items() if k == key][0]
-            del self.keys_index[del_index]
-        """
         if len(self.cache_data) == super().MAX_ITEMS:
             first_key = self.queue[0]
 
