@@ -28,9 +28,10 @@ class FIFOCache(BaseCache):
             print('DISCARD: {}'.format(first_key))
             del self.cache_data[first_key]
             self.queue = self.queue[1:]
-        else:
-            self.queue.append(key)
+        elif key in self.queue:
+            self.queue.remove(key)
 
+        self.queue.append(key)
         self.cache_data[key] = item
 
     def get(self, key):
