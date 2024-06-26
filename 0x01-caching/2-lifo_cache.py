@@ -13,7 +13,7 @@ class LIFOCache(BaseCache):
         self.stack = []
 
     def put(self, key, item):
-        """Adds an item to the cache and replaces the first item
+        """Adds an item to the cache and replaces the last item
         if the cache is overload
 
         Args:
