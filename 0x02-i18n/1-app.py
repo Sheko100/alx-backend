@@ -9,12 +9,15 @@ class Config:
     """configuartion for babel"""
     LANGUAGES = ["en", "fr"]
 
+
 app = Flask(__name__)
 
 app.config.from_object(Config)
 
 babel = Babel(app)
 
+
 @app.route('/')
 def hello_world():
+    """prints hello world on the root"""
     return render_template('1-index.html')
