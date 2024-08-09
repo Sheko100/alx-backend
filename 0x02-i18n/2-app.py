@@ -28,12 +28,5 @@ def get_locale():
 @app.route('/')
 def hello_world():
     """prints hello world on the root"""
-    return render_template(
-            '2-index.html',
-            home_title=gettext("home_title"),
-            home_header=gettext("home_header")
-            )
+    return render_template('2-index.html')
 
-
-if __name__ == '__main__':
-    app.run()
