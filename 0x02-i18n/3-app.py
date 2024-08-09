@@ -29,7 +29,10 @@ def get_locale():
 def hello_world():
     """prints hello world on the root"""
     return render_template(
-            '2-index.html',
+            '3-index.html',
             home_title=gettext("home_title"),
             home_header=gettext("home_header")
             )
+
+if __name__ == '__main__':
+    app.run()
