@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Module that defines a flask app with root route
 """
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from flask_babel import Babel, gettext
 
 
 class Config:
     """configuration for babel"""
-    LANGUAGES = ["en", "fr"]
+    LANGUAGES = ["fr", "en"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
@@ -28,5 +28,8 @@ def get_locale():
 @app.route('/')
 def hello_world():
     """prints hello world on the root"""
-    return render_template('3-index.html', title=gettext('home_title'), header=gettext('home_header'))
+    print(request.accept_languages)
+    return render_template('3-index.html')
 
+if __name__ == '__main__':
+    app.run()
