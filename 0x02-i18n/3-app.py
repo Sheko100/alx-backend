@@ -30,6 +30,3 @@ def hello_world():
     """prints hello world on the root"""
     return render_template('3-index.html', title=gettext('home_title'), header=gettext('home_header'))
 
-
-if __name__ == '__main__':
-    app.run()
