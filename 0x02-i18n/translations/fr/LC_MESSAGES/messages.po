@@ -1,15 +1,15 @@
 # French translations for PROJECT.
 # Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# Shaker Sharabi <shakersharabi100@gmail.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-09 13:45+0300\n"
-"PO-Revision-Date: 2024-08-09 13:45+0300\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: shakersharabi100@gmail.com\n"
+"POT-Creation-Date: 2024-08-14 04:19+0300\n"
+"PO-Revision-Date: 2024-08-14 04:19+0300\n"
+"Last-Translator: Shaker Sharabi <shakersharabi100@gmail.com>\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -18,11 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: 3-app.py:33
+#: templates/3-index.html:4
 msgid "home_title"
 msgstr "Bienvenue chez Holberton"
 
-#: 3-app.py:34
+#: templates/3-index.html:7
 msgid "home_header"
 msgstr "Bonjour monde!"
-

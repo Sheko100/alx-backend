@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Module that defines a flask app with root route
 """
-from flask import Flask, render_template, request, flash
-from flask_babel import Babel, gettext
+from flask import Flask, render_template, request
+from flask_babel import Babel
 
 
 class Config:
