@@ -1,10 +1,26 @@
 #!/usr/bin/env python3
-"""Module for hyper pagination
+"""Module that defines function index_range
 """
 import csv
 import math
 from typing import List
 from math import ceil
+
+
+def index_range(page: int, page_size: int) -> tuple:
+    """Gets an index range of pages
+
+    Args:
+        page: page number
+        page_size: the size of a page
+
+    Returns:
+        index range of the pages
+    """
+    start_index = page_size * (page - 1)
+    end_index = start_index + page_size
+
+    return (start_index, end_index)
 
 
 class Server:
@@ -27,17 +43,25 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Gets a page of the data"""
-        assert type(page) == int and type(page_size) == int
-        assert page > 0 and page_size > 0
+        """Gets a data of a specific page
+        """
+        assert(type(page) == int and type(page_size) == int)
+        assert(page > 0 and page_size > 0)
 
-        indx_range = index_range(page, page_size)
-        data = self.dataset()[indx_range[0]: indx_range[1]]
+        data_range = index_range(page, page_size)
+        dataset = self.dataset()
 
-        return data
+        last_index = len(dataset) - 1
+
+        if data_range[0] > last_index or data_range[1] > last_index:
+            return []
+
+        return dataset[data_range[0]:data_range[1]]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Gets hyper page of the data"""
+        """Gets hyper page of the data
+        """
+
         hyper_dct = {
                 'page_size': page_size,
                 'page': page,
@@ -54,19 +78,3 @@ class Server:
         hyper_dct['page_size'] = page_size if len(hyper_dct['data']) > 0 else 0
 
         return hyper_dct
-
-
-def index_range(page: int, page_size: int) -> tuple:
-    """Gets an index range of pages
-
-    Args:
-        page: page number
-        page_size: the size of a page
-
-    Returns:
-        index range of the pages
-    """
-    start_index = page_size * (page - 1)
-    end_index = start_index + page_size
-
-    return (start_index, end_index)
