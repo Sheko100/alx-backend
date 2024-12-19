@@ -45,7 +45,6 @@ class MRUCache(BaseCaching):
     def discard(self, key):
         """discards the key from the cache
         """
-        print(self.keys_queue)
         self.cache_data.pop(key)
         self.keys_queue.pop(-1)
         print("DISCARD:", key)
