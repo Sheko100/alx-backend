@@ -14,8 +14,6 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
-app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
 babel = Babel(app)
 
 
